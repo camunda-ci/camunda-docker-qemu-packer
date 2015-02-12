@@ -46,7 +46,7 @@ push:
 publish: pull-from pull build push
 
 # run container
-run:
+run: rmf
 	$(DOCKER) run --rm $(OPTS) $(IMAGE)
 
 # start container as daemon
