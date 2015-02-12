@@ -4,6 +4,11 @@ ENV PACKER_VERSION=0.7.5 \
     OUTPUT_DIR=/packer-output
 RUN save-env.sh PACKER_VERSION OUTPUT_DIR
 
+# allow everyone to write to OUTPUT_DIR
+RUN mkdir $OUTPUT_DIR && \
+    chmod 777 $OUTPUT_DIR
+
+# mark OUTPUT_DIR as volume so the content is discarded
 VOLUME $OUTPUT_DIR
 
 # add helper script
