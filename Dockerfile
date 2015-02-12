@@ -10,8 +10,9 @@ VOLUME $OUTPUT_DIR
 ADD bin/* /usr/local/bin/
 
 # install qemu
-RUN install-packages.sh make qemu-system-x86 qemu-utils bridge-utils ruby build-essential && \
-    gem install berkshelf
+RUN install-packages.sh make qemu-system-x86 qemu-utils bridge-utils && \
+    chmod u+s /usr/lib/qemu-bridge-helper && \
+    usermod -aG kvm camunda
 
 # add packer binaries
 RUN curl -L https://bintray.com/artifact/download/mitchellh/packer/packer_${PACKER_VERSION}_linux_amd64.zip > /tmp/packer.zip && \
