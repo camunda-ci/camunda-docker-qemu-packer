@@ -16,8 +16,7 @@ VOLUME $OUTPUT_DIR
 ADD bin/* /usr/local/bin/
 
 # install qemu
-RUN install-packages.sh make qemu-system-x86 qemu-utils bridge-utils && \
-    chmod u+s /usr/lib/qemu-bridge-helper && \
+RUN install-packages.sh make qemu-system-x86 qemu-utils && \
     usermod -aG kvm camunda
 
 # add packer binaries
