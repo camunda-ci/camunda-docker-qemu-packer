@@ -29,4 +29,7 @@ RUN curl ftp://camunda-ci1/ci/binaries/chef/chefdk_${CHEF_DK_VERSION}_amd64.deb 
     dpkg --install /tmp/chefdk.deb && \
     rm /tmp/chefdk.deb
 
+# add chef dk embedded ruby to path
+RUN add-path.sh /opt/chefdk/embedded/bin
+
 CMD ["/usr/local/bin/start-supervisord.sh"]
