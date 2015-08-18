@@ -1,6 +1,6 @@
 # image settings for the docker image name, tags and
 # container name while running
-IMAGE_NAME=camunda-ci1.local:5000/camunda-qemu-packer
+IMAGE_NAME=ci1.camunda.loc:5000/camunda-qemu-packer
 TAGS=latest
 NAME=qemu-packer
 
