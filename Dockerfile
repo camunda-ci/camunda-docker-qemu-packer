@@ -20,12 +20,12 @@ RUN install-packages.sh make qemu-system-x86 qemu-utils && \
     usermod -aG kvm camunda
 
 # add packer binaries
-RUN curl ftp://ci1.camunda.loc/ci/binaries/packer/packer_${PACKER_VERSION}_linux_amd64.zip > /tmp/packer.zip && \
+RUN curl https://nginx.service.consul/ci/binaries/packer/packer_${PACKER_VERSION}_linux_amd64.zip > /tmp/packer.zip && \
     unzip /tmp/packer.zip -d /usr/local/bin/ && \
     rm /tmp/packer.zip
 
 # install chef dk
-RUN curl ftp://ci1.camunda.loc/ci/binaries/chef/chefdk_${CHEF_DK_VERSION}_amd64.deb > /tmp/chefdk.deb && \
+RUN curl https://nginx.service.consul/ci/binaries/chef/chefdk_${CHEF_DK_VERSION}_amd64.deb > /tmp/chefdk.deb && \
     dpkg --install /tmp/chefdk.deb && \
     rm /tmp/chefdk.deb
 
