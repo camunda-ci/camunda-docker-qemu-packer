@@ -1,4 +1,4 @@
-FROM ci1.camunda.loc:5000/camunda-ci-base-ubuntu:latest
+FROM registry.camunda.com/camunda-ci-base-ubuntu:latest
 
 ENV PACKER_VERSION=0.7.5 \
     CHEF_DK_VERSION=0.4.0-1 \
