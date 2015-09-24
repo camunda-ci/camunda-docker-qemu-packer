@@ -32,4 +32,6 @@ RUN curl https://nginx.service.consul/ci/binaries/chef/chefdk_${CHEF_DK_VERSION}
 # add chef dk embedded ruby to path
 RUN add-path.sh /opt/chefdk/embedded/bin
 
+EXPOSE 5987
+
 CMD ["/usr/local/bin/start-supervisord.sh"]
