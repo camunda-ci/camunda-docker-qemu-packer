@@ -1,7 +1,7 @@
 FROM registry.camunda.com/camunda-ci-base-ubuntu:latest
 
-ENV PACKER_VERSION=0.7.5 \
-    CHEF_DK_VERSION=0.4.0-1 \
+ENV PACKER_VERSION=0.8.6 \
+    CHEF_DK_VERSION=0.8.1-1 \
     OUTPUT_DIR=/packer-output
 RUN save-env.sh PACKER_VERSION CHEF_DK_VERSION OUTPUT_DIR
 
